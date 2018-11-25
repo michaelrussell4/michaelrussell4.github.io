@@ -1,6 +1,6 @@
 /* Google Font types */
 
-.font-subtext {font-family: 'Titillium Web', sans-serif;}
+.font-subtext {font-family: 'Titillium Web', sans-serif; line-height: 2;}
 .font-stylish {font-family: 'Monoton', cursive;}
 .font-retrogame {font-family: 'Press Start 2P', cursive;}
 .font-heading {font-family: 'IBM Plex Mono', monospace;}
@@ -42,6 +42,7 @@
 	margin: 0; 
 	text-align: justify; 
 	text-justify: inter-word; 
+	word-wrap: break-word; 
 }
 
 .foremost-layer {
@@ -71,8 +72,8 @@
 
 @media only screen and (max-width: 992px) {
 	
-	#img-ghost-placer {
-		height: 330px; 
+	#main-background-image {
+		opacity: 0;
 	}
 	
 }

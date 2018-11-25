@@ -7,6 +7,8 @@
 <link rel="icon" href="Images/portfolio-fav.png" type="image/png" sizes="16x16">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Archivo|IBM+Plex+Mono|Monoton|Press+Start+2P|Titillium+Web" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <!-- W3.CSS -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!-- Portfolio style -->
@@ -41,26 +43,181 @@
 
 <!-- Main content -->
 <div class="w3-row position-abs-top">
-	<div class="w3-display-container w3-row">
-		<img id="main-background-image" class="w3-grayscale-min w3-round w3-hide-medium w3-hide-small" 
-			src="Images/laptop-background.jpg" alt="A laptop on a desk">
-		<div id="img-ghost-placer" class="w3-hidden-large"></div>
-		<div class="w3-padding w3-display-topmiddle">
-			<h1 class="w3-card font-heading w3-theme w3-padding">Hi. I'm Mike Russell</h1>
-			<h2 class="w3-card font-heading w3-theme-l1 w3-padding">Welcome to my portfolio</h2>
+	<div class="w3-row">
+		<div class="w3-display-container">
+			<img id="main-background-image" class="w3-grayscale-min" 
+				src="Images/laptop-background.jpg" alt="A laptop on a desk">
+			<div class="w3-padding w3-display-middle">
+				<h1 class="w3-card font-heading w3-theme w3-padding">Hi. I'm Mike Russell</h1>
+				<h2 class="w3-card font-heading w3-theme-l1 w3-padding">Welcome to my portfolio</h2>
+			</div>
 		</div>
 	</div>
 	<div id="main-content" class="w3-row">
-		<div class="w3-container w3-padding">
-			<div class="w3-row w3-card-2 w3-padding w3-white">
-				<div class="w3-col m8 w3-padding">
-					<h1 class="font-heading w3-theme-l2 w3-padding">Me</h2>
-					<p class="font-subtext w3-theme-l5">
-						I am a Computer Scientist who enjoys web development and programming puzzles, etc. etc. 
-					</p>
+		<div class="w3-container w3-padding-24">
+<!-- Me section-->
+			<div class="w3-row w3-card-2 w3-white w3-padding-large w3-margin">
+				<div class="w3-row">
+					<div class="w3-col m8">
+						<h1 class="font-heading w3-theme-l2 w3-padding">Me</h2>
+						<p class="font-subtext w3-large">
+							My name is Mike Russell. I'm a web developer. My design style focuses on 
+							simplicity and asthetics. I enjoy making things look nice and function well. 
+							<br>
+							My degree is in Computer Science. I am fluent in several programming
+							languages and competent in solving difficult problems of diverse nature
+							where complex logic is needed or optimal efficiency is crucial. 
+						</p>
+					</div>
+					<div class="w3-col m4 w3-padding">
+						<img id="avatar-image" src="Images/avatar-sample.png" alt="Avatar image of male">
+					</div>
 				</div>
-				<div class="w3-col m4 w3-padding">
-					<img id="avatar-image" src="Images/avatar-sample.png" alt="Avatar image of male">
+				<div class="w3-row">
+					<button onclick="pullDownCard('me-more-info')" id="me-btn" class="w3-btn w3-block w3-center w3-opacity">&#9660;</button>
+					<div id="me-more-info" class="w3-container w3-hide w3-padding w3-animate-zoom">
+						<button onclick="accordianPullDown('me-more-my-skills')" class="w3-btn w3-block font-heading w3-theme-l4 w3-xlarge w3-margin">My Skills</button>
+						<div id="me-more-my-skills" class="font-subtext w3-large w3-padding w3-hide">
+							<h3 class="font-heading">Languages</h3>
+							<div class="w3-padding">
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:15%">Assembly</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:60%">C</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:70%">C++</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:85%">C#</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:93%">Java</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:85%">JavaScript</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:52%">Python</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:85%">SQL</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:35%">VBA</div>
+								</div>
+							</div>
+							<h3 class="font-heading">Technology</h3>
+							<div class="w3-padding">
+								<table class="w3-table w3-bordered">
+									<tr>
+										<th>Tech</th>
+										<th>Description</th>
+									</tr>
+									<tr>
+										<td>Blender</td>
+										<td>
+											I use Blender to produce 3D-animations and images. These can be used
+											for demonstrative, educational, or simulating purposes.
+										</td>
+									</tr>
+									<tr>
+										<td>Amazon Web Services</td>
+										<td>
+											AWS is an online bundle of services. I've used it to set up cloud servers and
+											databases, cloud computing, and analytics.
+										</td>
+									</tr>
+									<tr>
+										<td>Node.js</td>
+										<td>
+											I've used Node.js for setting up servers and mobile app testing. 
+										</td>
+									</tr>
+									<tr>
+										<td>Git</td>
+										<td>
+											Git is one of various version controls that I've used. Most of my
+											use has been in web development.
+										</td>
+									</tr>
+								</table>
+							</div>
+							<h3 class="font-heading">Problem Solving</h3>
+							<div class="w3-padding">
+								<p class="font-subtext">
+									As a Computer Science major and one who has professional experience in 
+									development, I have had my share of tough problems. I am determined and
+									passionate in finding solutions to problems in creative, clever ways. 
+								</p>
+							</div>
+						</div>
+						<button onclick="accordianPullDown('me-more-experience')" class="w3-btn w3-block font-heading w3-theme-l4 w3-xlarge w3-margin">My Experience</button>
+						<div id="me-more-experience" class="font-subtext w3-large w3-padding w3-hide">
+							<table class="w3-table w3-bordered">
+								<tr>
+									<th>Where</th>
+									<th>What</th>
+									<th>When</th>
+								</tr>
+								<tr>
+									<td>Hill Air Force Base - SMXG</td>
+									<td>
+										Computer Science Internship. As a member of a Scrum team I worked
+										on several projects	including devloping websites, redoing websites, 
+										building 3D-animations using Blender, and more. 
+									</td>
+									<td>July 2018 - current</td>
+								</tr>
+								<tr>
+									<td>Blossomtree Software</td>
+									<td>
+										I worked as a member of a small team developing a mobile app from 
+										the ground-up. This involved brainstorming app ideas, writing mock-ups,
+										wire-frames, developing back-end databases using Amazon Web Services, 
+										developing front-end interface, and integration. 
+									</td>
+									<td>April 2018 - July 2018</td>
+								</tr>
+							</table>
+						</div>
+						<button onclick="accordianPullDown('me-more-about-me')" class="w3-btn w3-block font-heading w3-theme-l4 w3-xlarge w3-margin">A Little More About Me</button>
+						<div id="me-more-about-me" class="font-subtext w3-large w3-padding w3-hide">
+							<h3 class="font-heading">My Bio</h3>
+							<p class="font-subtext w3-large">
+								I've grown up in Utah and now live in Northern Utah	with my family. I enjoy 
+								music--playing and listening, reading books--mostly non-fiction, playing old-school
+								video games, and spending time with my family. 
+							</p>
+						</div>
+						<button onclick="accordianPullDown('me-more-resume')" class="w3-btn w3-block font-heading w3-theme-l4 w3-xlarge w3-margin">My Resume</button>
+						<div id="me-more-resume" class="font-subtext w3-large w3-padding w3-hide w3-center">
+							<h3 class="font-heading">Here's My Resume</h3>
+							<a class="w3-padding" href="Images/myResume.pdf" target="_blank" download>
+								<i class="fas fa-file-download w3-jumbo w3-text-light-blue w3-hover-text-blue"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- Projects section -->
+			<div class="w3-row w3-card-2 w3-white w3-padding-large w3-margin">
+				<div class="w3-row">
+					<h1 class="font-heading w3-theme-l2 w3-padding">Projects</h2>
+						
+				</div>
+			</div>
+<!-- Contact section -->
+			<div class="w3-row w3-card-2 w3-white w3-padding-large w3-margin">
+				<div class="w3-row">
+					<h1 class="font-heading w3-theme-l2 w3-padding">Contact</h2>
+					<div class="w3-center font-heading w3-large w3-margin">
+						<h2><a href="#" class="w3-bar-item w3-button font-retrogame w3-hover-text-white w3-hover-theme w3-theme">&#x3c;MR&#x3e;</a></h2>
+						<h2 class="font-heading">Michael Russell</h2>
+						<a href="tel:+13852880971">385-288-0971</a><br>
+						<a href="mailto:mr.portfolio.contact@gmail.com?Subject=Hello.%20From%your%20portfolio" target="_top">mr.portfolio.contact@gmail.com</a>
+					</div>
 				</div>
 			</div>
 		</div>
