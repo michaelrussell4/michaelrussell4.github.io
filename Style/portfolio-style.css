@@ -38,15 +38,9 @@
 	width: 100%; 
 }
 
-#background-text {
-	margin: 0; 
-	text-align: justify; 
-	text-justify: inter-word; 
-}
-
-#background-text-container {
-	height: 100%; 
-	overflow-y: hidden; 
+#background-container {
+	background-image: url('../Images/background-text.PNG');
+	background-size: auto; 
 }
 
 .break-word {

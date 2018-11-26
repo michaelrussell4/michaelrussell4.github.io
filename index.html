@@ -17,7 +17,7 @@
 <script src="Script/portfolio-script.js"></script>
 
 </head>
-<body onload="loadBackgroundText()">
+<body>
 
 <!-- Sidebar page navigation -->
 <div class="w3-sidebar w3-card w3-bar-block w3-theme-l1-opacity-min w3-hide-medium w3-hide-small foremost-layer">
@@ -35,14 +35,8 @@
 	<h3><a href="#" class="w3-bar-item w3-button font-heading w3-mobile">Contact</a></h3>
 </div>
 
-<!-- Background text wrapper -->
-<div class="w3-row w3-display-container">
-	<div id="background-text-container">
-		<p id="background-text" class="font-stylish break-word w3-jumbo w3-text-theme w3-opacity-max"></p>
-	</div>
-
 <!-- Main content -->
-<div class="w3-row position-abs-top">
+<div id="background-container" class="w3-row">
 	<div class="w3-row">
 		<div class="w3-display-container w3-hide-medium w3-hide-small">
 			<img id="main-background-image" class="w3-grayscale-min" 
@@ -103,6 +97,9 @@
 								</div>
 								<div class="w3-light-grey w3-round-xlarge w3-margin">
 									<div class="w3-container w3-green w3-round-xlarge" style="width:85%">JavaScript</div>
+								</div>
+								<div class="w3-light-grey w3-round-xlarge w3-margin">
+									<div class="w3-container w3-green w3-round-xlarge" style="width:45%">JQuery</div>
 								</div>
 								<div class="w3-light-grey w3-round-xlarge w3-margin">
 									<div class="w3-container w3-green w3-round-xlarge" style="width:52%">Python</div>
@@ -246,8 +243,6 @@
 			</div>
 		</div>
 	</div>
-</div>
-
 </div>
 
 </body>

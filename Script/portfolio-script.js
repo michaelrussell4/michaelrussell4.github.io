@@ -1,21 +1,3 @@
-function loadBackgroundText() {
-	var backgroundAttr = ['Simple ', 
-						  'HTML ',
-						  'Effective ',
-						  'Professional ', 
-						  'CSS ',						  
-						  'Good ', 
-						  'JavaScript ', 
-						  'Easy ', 
-						  'User ', 
-						  'Friendly ', 
-						  'Custom ', 
-						  'Style ',
-						  'Modern ']; 
-	for(i=0; i<200; i++)
-		document.getElementById("background-text").innerHTML += backgroundAttr[i%backgroundAttr.length]; 
-}
-
 function pullDownCard(id) {
 	var x = document.getElementById(id); 
 	var y = document.getElementById("me-btn"); 
