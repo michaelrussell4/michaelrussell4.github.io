@@ -42,6 +42,14 @@
 	margin: 0; 
 	text-align: justify; 
 	text-justify: inter-word; 
+}
+
+#background-text-container {
+	height: 100%; 
+	overflow-y: hidden; 
+}
+
+.break-word {
 	word-wrap: break-word; 
 }
 
@@ -60,6 +68,11 @@
 	width: 100%; 
 }
 
+.image-logo {
+	height: 50px; 
+	opacity: .5;
+}
+
 /* @media queries */
 
 @media only screen and (min-width: 993px) {
@@ -70,12 +83,24 @@
 
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 600px) {
 	
-	#main-background-image {
-		opacity: 0;
+	.my-cards {
+		padding: 10px !important; 
 	}
-	
-}
 
+	button {
+		margin: 1px !important; 
+		width: 90% !important;
+	}
+
+	#me-more-info {
+		padding: 1px !important; 
+	}
+
+	#me-btn {
+		width: 100% !important;   
+	}
+
+}
 

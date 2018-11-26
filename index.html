@@ -37,14 +37,14 @@
 
 <!-- Background text wrapper -->
 <div class="w3-row w3-display-container">
-	<div>
-		<p id="background-text" class="font-stylish w3-jumbo w3-text-theme w3-opacity-max"></p>
+	<div id="background-text-container">
+		<p id="background-text" class="font-stylish break-word w3-jumbo w3-text-theme w3-opacity-max"></p>
 	</div>
 
 <!-- Main content -->
 <div class="w3-row position-abs-top">
 	<div class="w3-row">
-		<div class="w3-display-container">
+		<div class="w3-display-container w3-hide-medium w3-hide-small">
 			<img id="main-background-image" class="w3-grayscale-min" 
 				src="Images/laptop-background.jpg" alt="A laptop on a desk">
 			<div class="w3-padding w3-display-middle">
@@ -52,11 +52,17 @@
 				<h2 class="w3-card font-heading w3-theme-l1 w3-padding">Welcome to my portfolio</h2>
 			</div>
 		</div>
+		<div class="w3-container w3-hide-large w3-padding">
+			<div class="w3-padding">
+				<h1 class="w3-card font-heading w3-theme w3-padding w3-center">Hi. I'm Mike Russell</h1>
+				<h2 class="w3-card font-heading w3-theme-l1 w3-padding w3-center">Welcome to my portfolio</h2>
+			</div>
+		</div>
 	</div>
 	<div id="main-content" class="w3-row">
 		<div class="w3-container w3-padding-24">
 <!-- Me section-->
-			<div class="w3-row w3-card-2 w3-white w3-padding-large w3-margin">
+			<div class="my-cards w3-row w3-card-2 w3-white w3-padding-large w3-margin">
 				<div class="w3-row">
 					<div class="w3-col m8">
 						<h1 class="font-heading w3-theme-l2 w3-padding">Me</h2>
@@ -109,34 +115,46 @@
 								</div>
 							</div>
 							<h3 class="font-heading">Technology</h3>
-							<div class="w3-padding">
+							<div class="w3-padding w3-responsive">
 								<table class="w3-table w3-bordered">
 									<tr>
 										<th>Tech</th>
 										<th>Description</th>
 									</tr>
 									<tr>
-										<td>Blender</td>
+										<td class="w3-center">
+											<img src="Images/blender-logo.png" alt="Blender logo" class="image-logo">
+											<h4>Blender</h4>
+										</td>
 										<td>
 											I use Blender to produce 3D-animations and images. These can be used
 											for demonstrative, educational, or simulating purposes.
 										</td>
 									</tr>
 									<tr>
-										<td>Amazon Web Services</td>
+										<td class="w3-center">
+											<img src="Images/aws-logo.jpg" alt="AWS logo" class="image-logo">
+											<h4>Amazon Web Services</h4>
+										</td>
 										<td>
 											AWS is an online bundle of services. I've used it to set up cloud servers and
 											databases, cloud computing, and analytics.
 										</td>
 									</tr>
 									<tr>
-										<td>Node.js</td>
+										<td class="w3-center">
+											<img src="Images/nodejs-logo.png" alt="Node.js logo" class="image-logo">
+											<h4>Node.js</h4>
+										</td>
 										<td>
-											I've used Node.js for setting up servers and mobile app testing. 
+											I use Node.js for setting up servers and mobile app testing. 
 										</td>
 									</tr>
 									<tr>
-										<td>Git</td>
+										<td class="w3-center">
+											<img src="Images/git-logo.svg" alt="Git logo" class="image-logo">
+											<h4>Git</h4>
+										</td>
 										<td>
 											Git is one of various version controls that I've used. Most of my
 											use has been in web development.
@@ -154,7 +172,7 @@
 							</div>
 						</div>
 						<button onclick="accordianPullDown('me-more-experience')" class="w3-btn w3-block font-heading w3-theme-l4 w3-xlarge w3-margin">My Experience</button>
-						<div id="me-more-experience" class="font-subtext w3-large w3-padding w3-hide">
+						<div id="me-more-experience" class="w3-responsive font-subtext w3-large w3-padding w3-hide">
 							<table class="w3-table w3-bordered">
 								<tr>
 									<th>Where</th>
@@ -162,7 +180,10 @@
 									<th>When</th>
 								</tr>
 								<tr>
-									<td>Hill Air Force Base - SMXG</td>
+									<td class="w3-center">
+										<img src="Images/hafb-logo.jpeg" alt="HAFB logo" class="image-logo">
+										<h4>Hill Air Force Base - SMXG</h4>
+									</td>
 									<td>
 										Computer Science Internship. As a member of a Scrum team I worked
 										on several projects	including devloping websites, redoing websites, 
@@ -171,7 +192,10 @@
 									<td>July 2018 - current</td>
 								</tr>
 								<tr>
-									<td>Blossomtree Software</td>
+									<td class="w3-center">
+										<img src="Images/blossomtree-logo.png" alt="Blossomtree Software logo" class="image-logo">
+										<h4>Blossomtree Software</h4>
+									</td>
 									<td>
 										I worked as a member of a small team developing a mobile app from 
 										the ground-up. This involved brainstorming app ideas, writing mock-ups,
@@ -212,7 +236,7 @@
 			<div class="w3-row w3-card-2 w3-white w3-padding-large w3-margin">
 				<div class="w3-row">
 					<h1 class="font-heading w3-theme-l2 w3-padding">Contact</h2>
-					<div class="w3-center font-heading w3-large w3-margin">
+					<div class="w3-center font-heading w3-large w3-margin break-word">
 						<h2><a href="#" class="w3-bar-item w3-button font-retrogame w3-hover-text-white w3-hover-theme w3-theme">&#x3c;MR&#x3e;</a></h2>
 						<h2 class="font-heading">Michael Russell</h2>
 						<a href="tel:+13852880971">385-288-0971</a><br>
