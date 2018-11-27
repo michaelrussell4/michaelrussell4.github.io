@@ -20,3 +20,13 @@ function accordianPullDown(id) {
 		x.className = x.className.replace(" w3-show", ""); 
 	}
 }
+
+function w3_open() {
+	document.getElementById("sidebar").style.display = "block"; 
+	document.getElementById("main-content").style.paddingLeft = "200px"; 
+}
+
+function w3_close() {
+	document.getElementById("sidebar").style.display = "none"; 
+	document.getElementById("main-content").style.paddingLeft = "16px"; 
+}

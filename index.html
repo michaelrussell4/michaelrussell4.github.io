@@ -20,8 +20,9 @@
 <body>
 
 <!-- Sidebar page navigation -->
-<div class="w3-sidebar w3-card w3-bar-block w3-theme-l1-opacity-min w3-hide-medium w3-hide-small foremost-layer">
-	<h2><a href="#" class="w3-bar-item w3-button font-retrogame w3-hover-text-white w3-hover-theme w3-center w3-theme">&#x3c;MR&#x3e;</a></h2>
+<div id="sidebar" class="w3-display-container w3-sidebar w3-card w3-bar-block w3-theme-l1-opacity-min w3-hide-medium w3-hide-small foremost-layer w3-animate-left">
+	<button id="sidebar-exit-button" class="w3-button w3-xlarge w3-display-topright" onclick="w3_close()">&times;</button>
+	<h2><a href="#" class="w3-bar-item w3-button font-retrogame w3-hover-text-white w3-hover-theme w3-theme">&#x3c;MR&#x3e;</a></h2>
 	<h3><a href="#" class="w3-bar-item w3-button font-heading">Me</a></h3>
 	<h3><a href="#" class="w3-bar-item w3-button font-heading">Projects</a></h3>
 	<h3><a href="#" class="w3-bar-item w3-button font-heading">Contact</a></h3>
@@ -214,9 +215,9 @@
 						</div>
 						<button onclick="accordianPullDown('me-more-resume')" class="w3-btn w3-block font-heading w3-theme-l4 w3-xlarge w3-margin">My Resume</button>
 						<div id="me-more-resume" class="font-subtext w3-large w3-padding w3-hide w3-center">
-							<h3 class="font-heading">Here's My Resume</h3>
+							<h4 class="font-heading">Here's My Resume</h4>
 							<a class="w3-padding" href="Images/myResume.pdf" target="_blank" download>
-								<i class="fas fa-file-download w3-jumbo w3-text-light-blue w3-hover-text-blue"></i>
+								<i id="resume-link" class="fas fa-file-download w3-jumbo w3-text-light-blue w3-hover-text-blue w3-padding"></i>
 							</a>
 						</div>
 					</div>
@@ -243,6 +244,10 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div id="sidebar-button" class="w3-left w3-hide-medium w3-hide-small">
+	<button class="w3-button w3-xxlarge w3-round" onclick="w3_open()">&#9776;</button>
 </div>
 
 </body>
