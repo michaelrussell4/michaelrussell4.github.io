@@ -24,9 +24,11 @@ function accordianPullDown(id) {
 function w3_open() {
 	document.getElementById("sidebar").style.display = "block"; 
 	document.getElementById("main-content").style.paddingLeft = "200px"; 
+	document.getElementById("sidebar-button").style.display = "none"; 
 }
 
 function w3_close() {
 	document.getElementById("sidebar").style.display = "none"; 
 	document.getElementById("main-content").style.paddingLeft = "16px"; 
+	document.getElementById("sidebar-button").style.display = "initial"; 
 }
