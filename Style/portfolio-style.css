@@ -180,6 +180,10 @@ html {
 	height: 90px;
 }
 
+.icon-tiny {
+	height: 60px; 
+}
+
 .no-padding-left {
 	padding-left: 0px !important;
 }
