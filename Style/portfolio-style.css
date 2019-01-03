@@ -7,35 +7,55 @@
 
 /* W3 customer generated theme */
 
-.w3-theme-l5 {color:#000 !important; background-color:#f0f9fd !important}
-.w3-theme-l4 {color:#000 !important; background-color:#ceebf7 !important}
-.w3-theme-l3 {color:#000 !important; background-color:#9dd7ee !important}
-.w3-theme-l2 {color:#000 !important; background-color:#6cc4e6 !important}
-.w3-theme-l1 {color:#fff !important; background-color:#3cb0de !important}
-.w3-theme-d1 {color:#fff !important; background-color:#1d84ad !important}
-.w3-theme-d2 {color:#fff !important; background-color:#1a7599 !important}
-.w3-theme-d3 {color:#fff !important; background-color:#176786 !important}
-.w3-theme-d4 {color:#fff !important; background-color:#145873 !important}
-.w3-theme-d5 {color:#fff !important; background-color:#104960 !important}
+.w3-theme-l5 {color:#000 !important; background-color:#f3f9ff !important}
+.w3-theme-l4 {color:#000 !important; background-color:#d6ebff !important}
+.w3-theme-l3 {color:#000 !important; background-color:#add6ff !important}
+.w3-theme-l2 {color:#000 !important; background-color:#85c2ff !important}
+.w3-theme-l1 {color:#fff !important; background-color:#5cadff !important}
+.w3-theme-d1 {color:#fff !important; background-color:#148aff !important}
+.w3-theme-d2 {color:#fff !important; background-color:#007af5 !important}
+.w3-theme-d3 {color:#fff !important; background-color:#006bd6 !important}
+.w3-theme-d4 {color:#fff !important; background-color:#005cb8 !important}
+.w3-theme-d5 {color:#fff !important; background-color:#004d99 !important}
 
-.w3-theme-light {color:#000 !important; background-color:#f0f9fd !important}
-.w3-theme-dark {color:#fff !important; background-color:#104960 !important}
-.w3-theme-action {color:#fff !important; background-color:#104960 !important}
+.w3-theme-light {color:#000 !important; background-color:#f3f9ff !important}
+.w3-theme-dark {color:#fff !important; background-color:#004d99 !important}
+.w3-theme-action {color:#fff !important; background-color:#004d99 !important}
 
-.w3-theme {color:#fff !important; background-color:#2092bf !important}
-.w3-text-theme {color:#2092bf !important}
-.w3-border-theme {border-color:#2092bf !important}
+.w3-theme {color:#fff !important; background-color:#3399ff !important}
+.w3-text-theme {color:#3399ff !important}
+.w3-border-theme {border-color:#3399ff !important}
 
-.w3-hover-theme:hover {color:#fff !important; background-color:#2092bf !important}
-.w3-hover-text-theme:hover {color:#2092bf !important}
-.w3-hover-border-theme:hover {border-color:#2092bf !important}
+.w3-hover-theme:hover {color:#fff !important; background-color:#3399ff !important}
+.w3-hover-text-theme:hover {color:#3399ff !important}
+.w3-hover-border-theme:hover {border-color:#3399ff !important}
 
-.w3-theme-l1-opacity-min {color:#fff !important; background: rgba(60, 176, 222, .75) !important}
+.w3-theme-l3-border {border: 5px solid #add6ff !important}
+.w3-theme-l5-border {border: 5px solid #f3f9ff !important}
+.w3-theme-border {border: 5px solid #3399ff !important}
+.w3-theme-purple-border {border: 5px solid #8989f5 !important}
+.w3-theme-light-purple-border {border: 5px solid #d0d0fb !important}
+
+.w3-theme-border-bottom {border-bottom: 5px solid #3399ff !important;}
+
+.w3-theme-l1-opacity-min {color:#fff !important; background: rgba(92, 173, 255, .75) !important}
+.w3-theme-purple {color:#fff !important; background-color:#8989f5 !important}
+.w3-theme-light-purple {color:#000 !important; background-color:#d0d0fb !important}
+.w3-theme-grey {color:#fff !important; background-color:#4f4b4a !important}
+
+.w3-text-theme-dark-purple {color:#5b5bf1 !important}
+
+/* Overwrite w3 classes */
+
+.w3-code {
+	border-left: 4px solid #3399ff !important;
+}
 
 /* Sidebar */
 
 #sidebar {
 	display: none; 
+	background: linear-gradient(rgba(217, 217, 217, .35),rgba(217, 217, 217, .35));
 }
 
 #sidebar-button {
@@ -46,10 +66,29 @@
 #sidebar-exit-button {
 	height: 61px;
 	background-color: rgba(0,0,0,0);
-	margin-top: 10px; 
+	margin-top: 10px;
+	padding-bottom: 10px;
 }
 
 /* Main page */
+
+html {
+	scroll-behavior: smooth;
+}
+
+.slow-hov-trans {
+	transition: all .3s ease;
+}
+
+.hover-purple:hover {
+	color: #fff !important; 
+	background-color: #8989f5 !important;
+}
+
+.hover-grey:hover {
+	color: #fff !important;
+	background-color: #4f4b4a !important;
+}
 
 #main-background-image {
 	width: 100%; 
@@ -89,31 +128,76 @@
 	animation: buldge .4s; 
 }
 
-/* Keyframes rules */
-
-@-webkit-keyframes mymove {
-	/* Safari 4.0 - 8.0 */
-	0% {transform: scale(1);}
-	60% {transform: scale(1.3);}
+.sub-button-purple {
+	background: linear-gradient(to left, white 50%, #8989f5 50%);
+	background-size: 200% 100%;
+	background-position: right bottom;
+	transition: all .5s ease-out;
 }
 
-@keyframes buldge {
-	0% {transform: scale(1);}
-	60% {transform: scale(1.3);}
+.sub-button-purple:hover {
+	background-position: left bottom;
+	color: white !important;
+}
+
+.sub-button-bar-purple {
+	background: linear-gradient(to left, #e9e9fb 99%, #8989f5 1%);
+	background-size: 200% 100%;
+	background-position: right bottom;
+}
+
+.sub-button-bar-purple:hover {
+	background-position: left bottom;
+}
+
+.sub-button-blue {
+	background: linear-gradient(white 50%, #3399ff 50%);
+	background-size: 100% 200%;
+	background-position: left top;
+	transition: all .2s ease-out;
+}
+
+.sub-button-blue:hover {
+	background-position: left bottom;
+	color: white !important;
+}
+
+.sub-button-bar-blue {
+	background: linear-gradient(to left, white 99%, #3399ff 1%);
+	background-size: 200% 100%;
+	background-position: right bottom;
+}
+
+.sub-button-bar-blue:hover {
+	background-position: left bottom;
+}
+
+.icon-medium {
+	height: 130px; 
+}
+
+.icon-small {
+	height: 90px;
+}
+
+.no-padding-left {
+	padding-left: 0px !important;
 }
 
 /* @media queries */
 
 @media only screen and (max-width: 992px) {
-
 	#main-content {
 		padding-left: 0px !important; 
 	}
 
 }
 
-@media only screen and (max-width: 600px) {
-	
+@media only screen and (max-width: 600px) {	
+	body {
+		margin-top: -16px;
+	}
+
 	.my-cards {
 		padding: 10px !important; 
 	}
@@ -137,3 +221,21 @@
 
 }
 
+/* Style rules */
+
+.no-margin-top {
+	margin-top: 0px !important;
+}
+
+/* Keyframes rules */
+
+@-webkit-keyframes mymove {
+	/* Safari 4.0 - 8.0 */
+	0% {transform: scale(1);}
+	60% {transform: scale(1.3);}
+}
+
+@keyframes buldge {
+	0% {transform: scale(1);}
+	60% {transform: scale(1.3);}
+}
