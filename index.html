@@ -227,7 +227,7 @@
 						<div id="me-more-about-me" class="font-subtext w3-large w3-padding w3-hide">
 							<h3 class="font-heading">My Bio</h3>
 							<p class="font-subtext w3-large">
-								I've grown up in Utah and now live in Northern Utah	with my family. I enjoy 
+								I've grown up in Utah and now live here	with my family. I enjoy 
 								music--playing and listening, reading books--mostly non-fiction, playing old-school
 								video games, and spending time with my family. 
 							</p>
@@ -270,9 +270,12 @@
 							<h2 class="font-heading w3-theme-purple-border w3-padding">Turing Machine Emulator</h2>
 						</div>
 						<div class="w3-row">
-							<p class="font-subtext w3-large w3-left-align">As part of my studies in formal languages I implemented a Turing Machine. A tape structure is mimicked by an array, which is traversed by a tape-head pointer. Input is checked against the rules defined in the machine. Output tells if the input is accepted.<br>Other topics I've studied in this area include Regular Languages, Finite Automata, Transition Graphs, the Halting Problem, and more.</p>
+							<p class="font-subtext w3-large w3-left-align">As part of my studies in formal languages I emulated a Turing Machine in Java. A tape structure is mimicked by an array, which is traversed by a tape-head pointer. Input is checked against the rules defined in the machine. Output tells whether the input is accepted.<br>Other topics I've studied in this area include Regular Languages, Finite Automata, Transition Graphs, the Halting Problem, and more.</p>
 							<div class="w3-panel w3-card w3-light-grey"> 
-								<h4 class="w3-padding-large no-padding-left w3-row">This program emulates a Turing Machine which accepts all words containing 'bbb' where the language &Sigma; used is {a,b}<span class="w3-right w3-green w3-padding">Java</span></h4>
+								<div class="w3-row">
+									<h4 class="w3-padding-large no-padding-left w3-col l6">This program emulates a Turing Machine which accepts all odd-length palindrome words where the language &Sigma; used is {x,y}</h4>
+									<h4 class="w3-right-align w3-green w3-padding w3-col l6">Java</h4>
+								</div>
 								<div class="w3-row">
 									<div class="w3-center w3-col l6"><h3>Turing Class</h3>
 										<div class="w3-code jsHigh notranslate w3-left-align code-box">
@@ -384,41 +387,68 @@
 									</div>
 									<div class="w3-center w3-col l6"><h3>Machine Implentation (driver)</h3>
 										<div class="w3-code jsHigh notranslate w3-left-align code-box">
-											// Turing Machine #1
+											// Michael Russell
 											<br>// Version: 1.0
 											<br>// -----------------------------------------------------------------
-											<br>// Turing Machine: all words containing 'bbb'
-											<br>// Alphabet = {a,b}
+											<br>// Turing Machine: all words in odd-length Palindrome
+											<br>// Alphabet = {x,y}
 											<br>// -----------------------------------------------------------------
-											<br>
-											<br>public class TM1
+                                            <br>
+											<br>public class TM3
 											<br>{
 											<br>&emsp;  public static void main(String[] args)
 											<br>&emsp;  {
 											<br>&emsp;&emsp;	String[] C  =
-											<br>&emsp;&emsp;	  {"0,a=>a,R,0",
-											<br>&emsp;&emsp;	   "0,b=>b,R,1",
-											<br>&emsp;&emsp;	   "1,a=>a,R,0",
-											<br>&emsp;&emsp;	   "1,b=>b,R,2",
-											<br>&emsp;&emsp;	   "1,a=>a,R,0",
-											<br>&emsp;&emsp;	   "2,b=>b,R,3",
-											<br>&emsp;&emsp;	   "2,a=>a,R,0"};
-											<br>&emsp;&emsp;	char[] ST = {'R','R','R','H'};
-											<br>&emsp;&emsp;
+											<br>&emsp;&emsp;&emsp;&emsp;	  {"0,x=>#,R,1",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "1,x=>x,R,1",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "1,y=>y,R,1",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "1,#=>#,L,2",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "2,#=>#,R,7",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "2,x=>#,L,3",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "3,x=>x,L,3",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "3,y=>y,L,3",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "3,#=>#,R,0",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "3,B=>B,R,0",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "0,y=>#,R,4",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "4,y=>y,R,4",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "4,x=>x,R,4",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "4,#=>#,L,5",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "5,#=>#,R,7",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "5,y=>#,L,6",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "6,y=>y,L,6",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "6,x=>x,L,6",
+											<br>&emsp;&emsp;&emsp;&emsp;	   "6,#=>#,R,0"};
+											<br>&emsp;&emsp;	char[] ST = {'R','R','R','R','R','R','R','H'};
+                                            <br>&emsp;&emsp;
 											<br>&emsp;&emsp;	String inString;
 											<br>&emsp;&emsp;	boolean accept1;
 											<br>&emsp;&emsp;	TM TM1 = new TM(C, ST);
 											<br>&emsp;&emsp;	if(args.length >= 1){
-											<br>&emsp;&emsp;	  // Input string is command line parameter
-											<br>&emsp;&emsp;	  inString = args[0];
-											<br>&emsp;&emsp;	  // Process input string
-											<br>&emsp;&emsp;	  accept1 = TM1.processData(inString);
-											<br>&emsp;&emsp;	  System.out.println(inString+"\t\t Valid string?   " + accept1);
+											<br>&emsp;&emsp;&emsp;	  // Input string is command line parameter
+											<br>&emsp;&emsp;&emsp;	  inString = args[0];
+											<br>&emsp;&emsp;&emsp;	  // Process input string
+											<br>&emsp;&emsp;&emsp;	  accept1 = TM1.processData(inString);
+											<br>&emsp;&emsp;&emsp;	  System.out.println(inString+"\t\t Valid string?   " + accept1);
 											<br>&emsp;&emsp;	}
-											<br>&emsp;&emsp;  }// end main
+											<br>&emsp;  }// end main
 											<br>} // end class
 										</div>
 									</div>
+									<div class="w3-row">
+										<div class="w3-center w3-col l4">
+											<h3>Example Tester</h3>
+											<p>Enter odd-length palindrome in language {x,y}</p>
+										</div>
+										<div class="w3-col l4">
+											<label class="w3-text-theme"><b>Input</b></label>
+											<input id="turing-input" class="w3-input w3-border w3-large" onkeyup="turingTest()" name="input" type="text">
+										</div>
+										<div class="w3-col l4">
+											<label class="w3-text-theme"><b>Output</b></label>
+											<input id="turing-output" class="w3-input w3-border w3-large" name="output" type="text" disabled>
+										</div>
+									</div>
+									<p class="w3-tiny w3-center">Example Tester is implemented here with JavaScript, not through the code written above</p>
 								</div>
 							</div>
 							<h4 class="font-heading w3-center">Download the source code</h4>
@@ -463,11 +493,11 @@
 				</div>
 			</div>
 <!-- Contact section -->
-			<div id="contact" class="w3-row w3-card-2 w3-white w3-padding-large w3-margin">
+			<div id="contact" class="w3-row w3-padding-large w3-theme-dark-purple-opacity">
 				<div class="w3-row">
 					<h1 class="font-heading w3-theme-border-bottom w3-padding">Contact</h1>
 					<div class="w3-center font-heading w3-large w3-margin break-word">
-						<h2><a href="#" class="w3-bar-item w3-button font-retrogame w3-hover-text-white w3-hover-theme w3-theme">&#x3c;MR&#x3e;</a></h2>
+						<h2><a href="#" class="w3-bar-item w3-button font-retrogame w3-hover-text-white w3-hover-theme sub-button-purple">&#x3c;MR&#x3e;</a></h2>
 						<h2 class="font-heading">Michael Russell</h2>
 						<a href="tel:+13852880971">385-288-0971</a><br>
 						<a href="mailto:mr.portfolio.contact@gmail.com?Subject=Hello.%20From%20your%20portfolio" target="_top">mr.portfolio.contact@gmail.com</a>

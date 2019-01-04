@@ -43,7 +43,7 @@
 .w3-theme-light-purple {color:#000 !important; background-color:#d0d0fb !important}
 .w3-theme-grey {color:#fff !important; background-color:#4f4b4a !important}
 
-.w3-text-theme-dark-purple {color:#5b5bf1 !important}
+.w3-theme-dark-purple-opacity {background:linear-gradient(rgba(14,14,164,.1),rgba(14,14,164,.1)) !important}
 
 /* Overwrite w3 classes */
 
@@ -124,20 +124,27 @@ html {
 }
 
 .code-box {
-	height: 300px !important; 
+	height: 400px !important; 
 	overflow-y: scroll;
 }
 
+#contact {
+	margin-left: -16px; 
+	margin-right: -16px; 
+	margin-bottom: -20px;
+}
+
 .sub-button-purple {
-	background: linear-gradient(to left, white 50%, #8989f5 50%);
+	background: linear-gradient(to left, #3399ff 50%, #8989f5 50%);
 	background-size: 200% 100%;
 	background-position: right bottom;
 	transition: all .5s ease-out;
+	color: white !important;
 }
 
 .sub-button-purple:hover {
 	background-position: left bottom;
-	color: white !important;
+	color: #000 !important;
 }
 
 .sub-button-bar-purple {
@@ -221,6 +228,11 @@ html {
 
 	.me-button {
 		font-size: 4vw !important;
+	}
+	
+	.code-box {
+		height: 300px !important; 
+		overflow-y: scroll;
 	}
 
 }

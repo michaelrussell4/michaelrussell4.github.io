@@ -19,4 +19,24 @@ function accordianPullDown(id) {
 	else {
 		x.className = x.className.replace(" w3-show", ""); 
 	}
+}	
+
+function turingTest() {
+	var valIn = document.getElementById('turing-input').value;
+	var valOut = document.getElementById('turing-output');
+	var output = false; 
+	var pattern = /^([^a-wz0-9\W])+$/i;
+	var inLang = pattern.test(valIn);
+	if(inLang && valIn.length % 2 == 1 && valIn.substring(0,(valIn.length-1)/2) == reverseString(valIn.substring((valIn.length-1)/2 + 1)))
+		output = true;
+	if(output){
+		valOut.style.color = "green";
+	} else {
+		valOut.style.color = "red";
+	}
+	valOut.value = output? "Accepted":"Rejected";
+}
+
+function reverseString(str) {
+	return str.split('').reverse().join('');
 }
