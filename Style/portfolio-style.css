@@ -148,13 +148,14 @@ html {
 }
 
 .sub-button-bar-purple {
-	background: linear-gradient(to left, #e9e9fb 99%, #8989f5 1%);
-	background-size: 200% 100%;
-	background-position: right bottom;
+	background: linear-gradient(to left, #3399ff 0%, #3399ff 4%, white 4%, white 96%, #8989f5 96%, #8989f5 100%);
+	background-size: 105% 100%;
+	background-position: left bottom;
+	transition: all .5s ease;
 }
 
 .sub-button-bar-purple:hover {
-	background-position: left bottom;
+	background-position: right bottom;
 }
 
 .sub-button-blue {
