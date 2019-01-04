@@ -270,15 +270,162 @@
 							<h2 class="font-heading w3-theme-purple-border w3-padding">Turing Machine Emulator</h2>
 						</div>
 						<div class="w3-row">
-							<p class="font-subtext w3-large w3-left-align">As part of my studies in formal languages I implemented a Turing Machine. A tape structure is mimicked by an array, which is traversed by a tape-head pointer. Input is checked against the rules defined in the machine. Output tells if the input is accepted.<br>Other topics I've studied in this area include Regular Languages, Finite Automata, Transition Graphs, The Halting Problem, and more.</p>
+							<p class="font-subtext w3-large w3-left-align">As part of my studies in formal languages I implemented a Turing Machine. A tape structure is mimicked by an array, which is traversed by a tape-head pointer. Input is checked against the rules defined in the machine. Output tells if the input is accepted.<br>Other topics I've studied in this area include Regular Languages, Finite Automata, Transition Graphs, the Halting Problem, and more.</p>
 							<div class="w3-panel w3-card w3-light-grey"> 
-								<h4 class="w3-padding-large no-padding-left">This program emulates a Turing Machine which accepts...<span class="w3-right w3-green w3-padding">Java</span></h4>
-								<div class="w3-code jsHigh notranslate w3-left-align">
-									fruits[0] = "Banana";<br>
-									fruits[1] = "Apple";<br>
-									fruits[2] = "Mango";<br>
-									fruits[3] = "Plum";<br>
+								<h4 class="w3-padding-large no-padding-left w3-row">This program emulates a Turing Machine which accepts all words containing 'bbb' where the language &Sigma; used is {a,b}<span class="w3-right w3-green w3-padding">Java</span></h4>
+								<div class="w3-row">
+									<div class="w3-center w3-col l6"><h3>Turing Class</h3>
+										<div class="w3-code jsHigh notranslate w3-left-align code-box">
+											// Turing Machine
+											<br>// Version: 1.0
+											<br>// -----------------------------------------------------------------
+											<br>// This program simulates a Turing Machine
+											<br>// -----------------------------------------------------------------
+											<br>
+											<br>public class TM {
+											<br>&emsp;
+											<br>&emsp;   /* 
+											<br>&emsp;   * Instance variables 
+											<br>&emsp;   * 
+											<br>&emsp;   * Code:        state transition function as code
+											<br>&emsp;   * StateType:   ='H'for halt and 'R' for reject
+											<br>&emsp;   * Tape:        read/write tape (input string is data)
+											<br>&emsp;   * tapePos:     tape head position
+											<br>&emsp;   * cstate:      current state
+											<br>&emsp;   */
+											<br>&emsp;   
+											<br>&emsp;   String[] Code;
+											<br>&emsp;   char[] StateType;
+											<br>&emsp;   String Tape;
+											<br>&emsp;   int tapePos;
+											<br>&emsp;   int cstate;
+											<br>&emsp;   
+											<br>&emsp;   /* Constructor(s) */
+											<br>&emsp;   
+											<br>&emsp;   // Initialize each of the instance variables
+											<br>&emsp;   TM(String[] C, char[] ST) {
+											<br>&emsp;&emsp;	  Code = C; 
+											<br>&emsp;&emsp;	  StateType = ST; 
+											<br>&emsp;&emsp;	  setState(0); 
+											<br>&emsp;&emsp;	  setTape("#"); 
+											<br>&emsp;&emsp;	  tapePos = 0; 
+											<br>&emsp;   }
+											<br>&emsp;   
+											<br>&emsp;   /* Methods */
+											<br>&emsp;   
+											<br>&emsp;   int getState() {
+											<br>&emsp;&emsp;	  return cstate; 
+											<br>&emsp;   }
+											<br>&emsp;   
+											<br>&emsp;   void setState(int x) {
+											<br>&emsp;&emsp;	  cstate = x; 
+											<br>&emsp;   }
+											<br>&emsp;   
+											<br>&emsp;   void setTape(String s) {
+											<br>&emsp;&emsp;	  Tape = s + "#"; 
+											<br>&emsp;   }
+											<br>&emsp;   
+											<br>&emsp;   // ----------------------------------------------------------
+											<br>&emsp;   // This method searches the strings in Code to find if any
+											<br>&emsp;   // match the state and current tape character and react
+											<br>&emsp;   // according to the matched string, if found
+											<br>&emsp;   //
+											<br>&emsp;   // Version 1.1
+											<br>&emsp;   // ----------------------------------------------------------
+											<br>&emsp;   void stateTransition(char c) {
+											<br>&emsp;&emsp;	  for(int i=0; i&lt;Code.length; i++){
+											<br>&emsp;&emsp;&emsp;		 if(Integer.parseInt((""+Code[i].charAt(0)))==cstate && Code[i].charAt(2)==c){
+											<br>&emsp;&emsp;&emsp;&emsp;			// replace the tapePos char with the new one from rule
+											<br>&emsp;&emsp;&emsp;&emsp;			setTape(Tape.substring(0,tapePos) + Code[i].charAt(5) + Tape.substring(tapePos+1));
+											<br>&emsp;&emsp;&emsp;&emsp;			// set the tapePos according to directions in code
+											<br>&emsp;&emsp;&emsp;&emsp;			tapePos += Code[i].charAt(7)=='R'? 1:-1;
+											<br>&emsp;&emsp;&emsp;&emsp;			// check if tape head is within bounds of tape
+											<br>&emsp;&emsp;&emsp;&emsp;			if(tapePos<0||tapePos>Tape.length()){
+											<br>&emsp;&emsp;&emsp;&emsp;&emsp;			   System.out.println("Error. tapePos out of bounds"); 
+											<br>&emsp;&emsp;&emsp;&emsp;&emsp;			   break;
+											<br>&emsp;&emsp;&emsp;&emsp;			}
+											<br>&emsp;&emsp;&emsp;&emsp;			// set cstate
+											<br>&emsp;&emsp;&emsp;&emsp;			setState(Integer.parseInt(""+Code[i].charAt(9))); 
+											<br>&emsp;&emsp;&emsp;&emsp;			//end for loop
+											<br>&emsp;&emsp;&emsp;&emsp;			return;
+											<br>&emsp;&emsp;&emsp;		 }
+											<br>&emsp;&emsp;	  }
+											<br>&emsp;&emsp;	  // no paths available -- simulate crash
+											<br>&emsp;&emsp;	  StateType[cstate] = 'r';    
+											<br>&emsp;   }
+											<br>&emsp;   
+											<br>&emsp;   // ----------------------------------------------------------
+											<br>&emsp;   // This method loops continually through the tape, calling
+											<br>&emsp;   // StateTransition to react to each state, giving the current
+											<br>&emsp;   // tape character as param
+											<br>&emsp;   //
+											<br>&emsp;   // Version 1.1
+											<br>&emsp;   // ----------------------------------------------------------
+											<br>&emsp;   boolean processData(String s) {
+											<br>&emsp;	  // place input string on the tape
+											<br>&emsp;	  setTape(s);
+											<br>&emsp;	  
+											<br>&emsp;	  // while in current state of 'R' call state transition
+											<br>&emsp;	  while(StateType[cstate] == 'R'){
+											<br>&emsp;		 stateTransition(Tape.charAt(tapePos)); 
+											<br>&emsp;	  }
+											<br>&emsp;	  
+											<br>&emsp;	  if(StateType[cstate] == 'H'){
+											<br>&emsp;		 // halts
+											<br>&emsp;		 return true; 
+											<br>&emsp;	  }
+											<br>&emsp;	  else {
+											<br>&emsp;		 // crashes
+											<br>&emsp;		 return false; 
+											<br>&emsp;	  }  
+											<br>&emsp;   }
+											<br>}	
+										</div>
+									</div>
+									<div class="w3-center w3-col l6"><h3>Machine Implentation (driver)</h3>
+										<div class="w3-code jsHigh notranslate w3-left-align code-box">
+											// Turing Machine #1
+											<br>// Version: 1.0
+											<br>// -----------------------------------------------------------------
+											<br>// Turing Machine: all words containing 'bbb'
+											<br>// Alphabet = {a,b}
+											<br>// -----------------------------------------------------------------
+											<br>
+											<br>public class TM1
+											<br>{
+											<br>&emsp;  public static void main(String[] args)
+											<br>&emsp;  {
+											<br>&emsp;&emsp;	String[] C  =
+											<br>&emsp;&emsp;	  {"0,a=>a,R,0",
+											<br>&emsp;&emsp;	   "0,b=>b,R,1",
+											<br>&emsp;&emsp;	   "1,a=>a,R,0",
+											<br>&emsp;&emsp;	   "1,b=>b,R,2",
+											<br>&emsp;&emsp;	   "1,a=>a,R,0",
+											<br>&emsp;&emsp;	   "2,b=>b,R,3",
+											<br>&emsp;&emsp;	   "2,a=>a,R,0"};
+											<br>&emsp;&emsp;	char[] ST = {'R','R','R','H'};
+											<br>&emsp;&emsp;
+											<br>&emsp;&emsp;	String inString;
+											<br>&emsp;&emsp;	boolean accept1;
+											<br>&emsp;&emsp;	TM TM1 = new TM(C, ST);
+											<br>&emsp;&emsp;	if(args.length >= 1){
+											<br>&emsp;&emsp;	  // Input string is command line parameter
+											<br>&emsp;&emsp;	  inString = args[0];
+											<br>&emsp;&emsp;	  // Process input string
+											<br>&emsp;&emsp;	  accept1 = TM1.processData(inString);
+											<br>&emsp;&emsp;	  System.out.println(inString+"\t\t Valid string?   " + accept1);
+											<br>&emsp;&emsp;	}
+											<br>&emsp;&emsp;  }// end main
+											<br>} // end class
+										</div>
+									</div>
 								</div>
+							</div>
+							<h4 class="font-heading w3-center">Download the source code</h4>
+							<div class="w3-row w3-center">
+								<a class="w3-padding" href="Images/myResume.pdf" target="_blank">
+									<i id="resume-link" class="fas fa-file-download w3-jumbo w3-text-theme w3-hover-text-blue w3-padding"></i>
+								</a>
 							</div>
 						</div>
 					</div>

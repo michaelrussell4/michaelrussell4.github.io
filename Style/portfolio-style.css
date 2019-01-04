@@ -94,11 +94,6 @@ html {
 	width: 100%; 
 }
 
-#background-container {
-	background-image: url('../Images/background-text.PNG');
-	background-size: auto; 
-}
-
 .break-word {
 	word-wrap: break-word; 
 }
@@ -126,6 +121,11 @@ html {
 #resume-link:hover {
 	-webkit-animation: buldge .4s; /* Safari 4.0 - 8.0 */
 	animation: buldge .4s; 
+}
+
+.code-box {
+	height: 300px !important; 
+	overflow-y: scroll;
 }
 
 .sub-button-purple {
