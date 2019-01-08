@@ -31,7 +31,7 @@
 </div>
 
 <div id="sidebar-button" class="w3-top w3-hide-medium w3-hide-small">
-	<button class="w3-button w3-xxlarge w3-round w3-animate-left" onclick="w3.show('#sidebar'), w3.hide('#sidebar-button')">&#9776;</button>
+	<button class="w3-button w3-xxlarge w3-animate-left" onclick="w3.show('#sidebar'), w3.hide('#sidebar-button')">&#9776;</button>
 </div>
 
 <!-- Mobile page navigation -->
@@ -76,8 +76,8 @@
 							where complex logic is needed or optimal efficiency is crucial. 
 						</p>
 					</div>
-					<div class="w3-col m4 w3-padding">
-						<img id="avatar-image" src="Images/profile-picture.jpeg" alt="Picture of me">
+					<div class="w3-col m4 w3-margin-bottom w3-padding w3-center diagonal-bar-blue w3-round">
+						<img id="profile-image" src="Images/profile-picture.jpeg" alt="Picture of me">
 					</div>
 				</div>
 				<div class="w3-row">
@@ -115,7 +115,7 @@
 									<div class="w3-container w3-green w3-round-xlarge" style="width:52%">Python</div>
 								</div>
 								<div class="w3-light-grey w3-round-xlarge w3-margin">
-									<div class="w3-container w3-green w3-round-xlarge" style="width:85%">SQL</div>
+									<div class="w3-container w3-green w3-round-xlarge" style="width:92%">SQL</div>
 								</div>
 								<div class="w3-light-grey w3-round-xlarge w3-margin">
 									<div class="w3-container w3-green w3-round-xlarge" style="width:35%">VBA</div>
@@ -252,7 +252,7 @@
 						<div id="me-more-resume" class="font-subtext w3-large w3-padding w3-hide w3-center">
 							<h4 class="font-heading">Here's My Resume</h4>
 							<a class="w3-padding" href="Images/myResume.pdf" target="_blank">
-								<i id="resume-link" class="fas fa-file-download w3-jumbo w3-text-theme w3-hover-text-blue w3-padding"></i>
+								<i class="download-link fas fa-file-download w3-jumbo w3-text-theme w3-hover-text-blue w3-padding"></i>
 							</a>
 						</div>
 					</div>
@@ -439,7 +439,7 @@
 									<div class="w3-row">
 										<div class="w3-center w3-col l4">
 											<h3>Example Tester</h3>
-											<p>Enter odd-length palindrome in language {x,y}</p>
+											<p class="w3-small">Enter odd-length palindrome in language {x,y}</p>
 										</div>
 										<div class="w3-col l4">
 											<label class="w3-text-theme"><b>Input</b></label>
@@ -453,11 +453,22 @@
 									<p class="w3-tiny w3-center">Example Tester is implemented here with JavaScript, not through the code written above</p>
 								</div>
 							</div>
-							<h4 class="font-heading w3-center">Download the source code</h4>
+							<h4 class="font-heading w3-center">Download the source code</h4><hr>
 							<div class="w3-row w3-center">
-								<a class="w3-padding" href="Images/myResume.pdf" target="_blank">
-									<i id="resume-link" class="fas fa-file-download w3-jumbo w3-text-theme w3-hover-text-blue w3-padding"></i>
-								</a>
+								<div class="w3-col l3 m3 w3-hide-small"><br></div>
+								<div class="w3-col l3 m3">
+									<h6>Turing Class</h6>
+									<a class="w3-padding" href="Resources/TM.java" target="_blank">
+										<i class="download-link fas fa-file-download w3-jumbo w3-text-theme w3-hover-text-blue w3-padding"></i>
+									</a>
+								</div>
+								<div class="w3-col l3 m3">
+									<h6>Turing Driver</h6>
+									<a class="w3-padding" href="Resources/TM3.java" target="_blank">
+										<i class="download-link fas fa-file-download w3-jumbo w3-text-theme w3-hover-text-blue w3-padding"></i>
+									</a>
+								</div>
+								<div class="w3-col l3 m3 w3-hide-small"><br></div>
 							</div>
 						</div>
 					</div>
@@ -489,7 +500,24 @@
 						</div>
 						<div class="w3-row">
 							<p class="font-subtext w3-large w3-left-align">This Fibonnaci calculator is relatively simple but it shows my interest and study in mathematics and my abilities to understand and solve problems of this sort of nature. Other practice I've had in this area is solving Euler Project problems found on <a class="w3-text-blue" href="projecteuler.net">projecteuler.net</a>. These problems involve difficult computations that take clever coding to solve. I've solved the first 24 problems.</p>
-							
+							<div class="w3-row">
+								<div class="w3-col m5 l5">
+									<label class="w3-text-theme"><b>Input</b><span class="w3-text-black w3-small w3-margin-left">(Enter a number greater zero</span></label>
+									<input id="fib-input" class="w3-input w3-border w3-large" name="input" type="text">
+								</div>
+								<div class="w3-col m5 l5">
+									<label class="w3-text-theme"><b>Output</b></label>
+									<input id="fib-output" class="w3-input w3-border w3-large" name="output" type="text" disabled>
+								</div>
+								<div class="w3-col m2 l2 w3-center" style="margin-top: 23px">
+									<button class="w3-button w3-large w3-round w3-green" onclick="fibonnaci()">Submit</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w3-row w3-padding w3-center">
+						<div class="w3-center">
+							<h2 class="font-heading w3-theme-purple-border w3-padding">More Projects Coming Soon</h2>
 						</div>
 					</div>
 				</div>

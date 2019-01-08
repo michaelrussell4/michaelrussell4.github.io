@@ -109,8 +109,9 @@ html {
 	width: 100%; 
 }
 
-#avatar-image {
-	max-height: 350px;  
+#profile-image {
+	width: 98%;
+	max-width: 300px; 
 }
 
 .image-logo {
@@ -118,7 +119,7 @@ html {
 	opacity: .75;
 }
 
-#resume-link:hover {
+.download-link:hover {
 	-webkit-animation: buldge .4s; /* Safari 4.0 - 8.0 */
 	animation: buldge .4s; 
 }
@@ -132,6 +133,10 @@ html {
 	margin-left: -16px; 
 	margin-right: -16px; 
 	margin-bottom: -20px;
+}
+
+.diagonal-bar-blue {
+	background: linear-gradient(135deg, white 0%, white 35%, #3399ff 35%, #3399ff 65%, white 65%, white 100%);
 }
 
 .sub-button-purple {
