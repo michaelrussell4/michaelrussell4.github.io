@@ -41,7 +41,7 @@ function reverseString(str) {
 	return str.split('').reverse().join('');
 }
 
-function fibonnaci() {
+function fibonacci() {
 	var valIn = document.getElementById('fib-input').value;
 	var valOut = document.getElementById('fib-output');
 	var output = false; 
